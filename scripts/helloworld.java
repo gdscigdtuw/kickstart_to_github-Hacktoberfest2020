@@ -8,3 +8,8 @@ public class MyFirstJavaProgram {
       System.out.println("Hello World"); // prints Hello World
    }
 }
+//
+//Output
+//C:\> javac MyFirstJavaProgram.java
+//C:\> java MyFirstJavaProgram
+//Hello World
