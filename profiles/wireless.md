@@ -5,7 +5,7 @@
 India
 
 ### Academics
----
+Undergraduate 
 
 ### Interests
 
