@@ -1,0 +1,4 @@
+#### Name: Pooja Gera
+- Place: New Delhi, Delhi, India
+- Bio: I am a B.Tech(IT) student at IGDTUW who works to make her dreams come true in reality. I have gained industrial exposure during the first year of my graduation by working with The Education Tree as a member in their content development team. I have a diverse skill set which includes web design and development, machine learning, data analysis and visualisation, public speaking, graphic designing, content management and social media marketing. I also possess leadership skills which I exhibit being an active Rotaractor at Rotaract Club of Delhi Philanthropists where I am serving as the Club Secretary for Rota Year 2020-21. In addition to building solutions for making lives easier by improvising technology, I also help the community as and whenever I can.
+- GitHub: [pooja-gera](https://github.com/pooja-gera)
