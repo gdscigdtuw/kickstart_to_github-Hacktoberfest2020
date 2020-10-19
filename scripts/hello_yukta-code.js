@@ -1,57 +1,69 @@
-#include<bits/stdc++.h>
-
-using namespace std;
-
-struct node {
-    int data;
-    struct node *next;
-};
-
-/* Function to push nodes in a linked list. */
-void push(struct node **head_ref, int data) {
-    struct node *node;
-    node = (struct node*)malloc(sizeof(struct node));
-    node->data = data;
-    node->next = (*head_ref);
-    (*head_ref) = node;
-}
- 
-/* Function to reverse the nodes in a linked list. */
-void reverse(struct node **head_ref) {
-    struct node *temp = NULL;
-    struct node *prev = NULL;
-    struct node *current = (*head_ref);
-    while(current != NULL) {
-        temp = current->next;
-        current->next = prev;
-        prev = current;
-        current = temp;
-    }
-    (*head_ref) = prev;
-}
-
-/* Function to print the nodes in a linked list. */
-void printnodes(struct node *head) {
-    while(head != NULL) {
-        cout<<head->data<<" ";
-        head = head->next;
-    }
-}
-
-/* Driver function to check the above algorithm. */
-int main() {
-    struct node *head = NULL;
-    push(&head, 10);
-    push(&head, 11);
-    push(&head, 18);
-    push(&head, 60);
-    push(&head, 94);
-    push(&head, 100);
-    cout << "List before reversing" << endl;
-    printnodes(head);
-    reverse(&head);
-    cout << endl;
-    cout << "List after reversing"<<endl;
-    printnodes(head);
-    return 0;
-}
+// C++ program to detect loop in a linked list 
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+/* Link list node */
+struct Node { 
+    int data; 
+    struct Node* next; 
+}; 
+  
+void push(struct Node** head_ref, int new_data) 
+{ 
+    /* allocate node */
+    struct Node* new_node = new Node; 
+  
+    /* put in the data  */
+    new_node->data = new_data; 
+  
+    /* link the old list off the new node */
+    new_node->next = (*head_ref); 
+  
+    /* move the head to point to the new node */
+    (*head_ref) = new_node; 
+} 
+  
+// Returns true if there is a loop in linked list 
+// else returns false. 
+bool detectLoop(struct Node* h) 
+{ 
+    unordered_set<Node*> s; 
+    while (h != NULL) { 
+        // If this node is already present 
+        // in hashmap it means there is a cycle 
+        // (Because you we encountering the 
+        // node for the second time). 
+        if (s.find(h) != s.end()) 
+            return true; 
+  
+        // If we are seeing the node for 
+        // the first time, insert it in hash 
+        s.insert(h); 
+  
+        h = h->next; 
+    } 
+  
+    return false; 
+} 
+  
+/* Driver program to test above function*/
+int main() 
+{ 
+    /* Start with the empty list */
+    struct Node* head = NULL; 
+  
+    push(&head, 20); 
+    push(&head, 4); 
+    push(&head, 15); 
+    push(&head, 10); 
+  
+    /* Create a loop for testing */
+    head->next->next->next->next = head; 
+  
+    if (detectLoop(head)) 
+        cout << "Loop found"; 
+    else
+        cout << "No Loop"; 
+  
+    return 0; 
+} 
