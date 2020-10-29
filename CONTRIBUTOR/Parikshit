@@ -1,0 +1,6 @@
+#include<iostream.h>
+void mian()
+{
+   cout<<"Hello World";
+   return 0;
+}
